@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundmentos - flex shrink</title>
+    <style>
+        .container{
+            display: flex;
+            border: 1px solid black;
+            max-width: 350px;
+        }
+
+        .item{
+            margin: 5px;
+            background-color: orangered;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .s1{
+            flex-shrink: 1;
+        }
+        .s0{
+            flex-shrink: 0;
+            }
+        .s2{
+            flex-shrink: 2;
+        }
+        .s3{
+            flex-shrink: 3;
+        }
+
+        .fg1{
+            flex-grow: 1;
+        }
+
+        .fg0{
+            flex-grow: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1> shrink 1</h1>
+    <section class="container">
+        <div class="item s1 fg1">A</div>
+        <div class="item s1 fg1">B</div>
+        <div class="item s1 fg1">C</div>
+        <div class="item s1 fg1">D</div>
+        <div class="item s1 fg1">E</div>
+    </section>
+
+    <h1> shrink 1</h1>
+    <section class="container">
+        <div class="item s1 fg1">A</div>
+        <div class="item s1 fg1">Lorem ipsum,</div>
+        <div class="item s1 fg1">C</div>
+        <div class="item s1 fg1">D</div>
+    </section>
+
+    <h1> shrink 0</h1>
+    <section class="container">
+        <div class="item s0 fg0">A</div>
+        <div class="item s0 fg0">Lorem ipsum,Lorem ipsum,Lorem ipsum,</div>
+        <div class="item s0 fg0">C</div>
+        <div class="item s0 fg0">D</div>
+    </section>
+
+    <h1> shrink 0</h1>
+    <section class="container">
+        <div class="item s0 fg1 sg1">A</div>
+        <div class="item s0 fg1 sg2">Lorem ipsum,</div>
+        <div class="item s0 fg1 sg2">C</div>
+        <div class="item s0 fg sg2">D</div>
+    </section>
+</body>
+</html>
